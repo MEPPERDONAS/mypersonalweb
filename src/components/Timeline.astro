@@ -1,0 +1,34 @@
+---
+import Timelineitem from "./Timelineitem.astro"
+
+const  TIMELINE  = [
+    {
+        date: "Mayo 2026",
+        title: "Administracion de Empresas",
+        description: "Graduado de administracion de empresas en la Universidad del Cauca. Durante mi proceso de formacion recibí reconocimientos por mi trabajo de grado como mejor ponencia en el III Congreso Internacional de Ciencias Administrativas y Contables.",
+        link: "https://www.instagram.com/p/DQ5KcBeDToB/"
+    },
+    {
+        date: "Marzo 2026",
+        title: "Curso Computer Science Fundamentals from HarvardX",
+        description: "Participé en el curso de Fundamentos de Ciencias de la Computación de HarvardX modalidad virtual, adquiriendo conocimientos esenciales en algoritmos, estructuras de datos y programación."
+    },
+    {
+        date: "Enero 2022",
+        title: "Conocimiento basico en desarrollo web",
+        description: "Tengo conocimientos basicos en desarrollo web, incluyendo Astro y tailwind, lo que me permite crear y mantener sitios web de mediana complegidad." 
+    }
+]
+---
+<ol class="relative border-s border-default">  
+    {
+        TIMELINE.map((item) => (
+            <li class="mb-10 ms-4">
+                <Timelineitem {...item} />
+            </li>
+        ))
+
+    }
+
+</ol>
+
