@@ -1,22 +1,85 @@
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/80">
-    <div class="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <img 
-            class="rounded-full w-10 h-10 sm:w-12 sm:h-12 hidden md:inline-flex object-cover"
-            src="https://lh3.googleusercontent.com/a/ACg8ocJKQ7p1-bszCiNz1TAZIwfVnDB1B3R-2EeCwkgtmOsEnslTYcE5=s83-c-mo" 
-            alt="Portafoleo Logo" 
-        />
-        
-        <nav class="flex flex-col sm:flex-row gap-3 sm:gap-6 lg:gap-10 text-sm sm:text-base opacity-80 hover:opacity-100 transition-opacity">
-            <a href="/" class="hover:text-cyan-600 transition-colors">Portafoleo</a>
-            <a href="#about" class="hover:text-cyan-600 transition-colors">Sobre mi</a>
-            <a href="#projects" class="hover:text-cyan-600 transition-colors">Proyectos</a>
-            <a href="#contact" class="hover:text-cyan-600 transition-colors">Contacto</a>
-        </nav>
+---
+import ArrowIcon from '../assets/icons/ArrowIcon.astro';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-white/80 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <img 
+        class="rounded-full w-10 h-10 hidden sm:block object-cover"
+        src="https://lh3.googleusercontent.com/a/ACg8ocJKQ7p1-bszCiNz1TAZIwfVnDB1B3R-2EeCwkgtmOsEnslTYcE5=s83-c-mo"
+        alt="Portafolio Logo"
+      />
+
+      <button
+        id="boton"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        class="sm:hidden text-2xl text-sky-600 transition-transform duration-300"
+      >
+        ☰
+      </button>
+      <nav
+        id="headermenu"
+        class="
+          
+          absolute top-full left-0 w-full
+          bg-white/95 backdrop-blur
+          sm:static sm:w-auto sm:flex
+          flex flex-col sm:flex-row
+          gap-4 sm:gap-8
+          text-center
+          text-sm sm:text-base
+          py-4 sm:py-0
+          opacity-0 sm:opacity-100
+          -translate-y-2 sm:translate-y-0
+          transition-all duration-300 ease-out
+        "
+      >
+        <a href="#about" class="hover:text-cyan-600 transition-colors">Sobre mí</a>
+        <a href="#projects" class="hover:text-cyan-600 transition-colors">Proyectos</a>
+        <a href="#contact" class="hover:text-cyan-600 transition-colors">Contacto</a>
+      </nav>
+
     </div>
+  </div>
 </header>
 
-<style>
-    header {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-</style>
+<script>
+  const btn = document.getElementById('boton');
+  const menu = document.getElementById('headermenu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isOpen = menu.classList.contains('open');
+
+      if (isOpen) {
+        menu.classList.add('opacity-0', '-translate-y-2');
+        menu.classList.remove('opacity-100', 'translate-y-0', 'open');
+
+        setTimeout(() => menu.classList.add('hidden'), 300);
+        btn.textContent = '☰';
+      } else {
+        menu.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          menu.classList.remove('opacity-0', '-translate-y-2');
+          menu.classList.add('opacity-100', 'translate-y-0', 'open');
+        });
+        btn.textContent = '✕';
+      }
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('opacity-0', '-translate-y-2');
+        menu.classList.remove('opacity-100', 'translate-y-0', 'open');
+
+        setTimeout(() => menu.classList.add('hidden'), 300);
+        btn.textContent = '☰';
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
