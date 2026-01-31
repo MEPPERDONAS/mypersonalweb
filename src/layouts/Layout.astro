@@ -58,3 +58,15 @@ const { title, description } = Astro.props;
 		}
 	}
 </style>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('opacity-0', !entry.isIntersecting)
+      entry.target.classList.toggle('translate-y-6', !entry.isIntersecting)
+    })
+  }, { threshold: 0.15 })
+
+  document.querySelectorAll('[data-fade-up]')
+    .forEach(el => observer.observe(el))
+</script>
