@@ -5,12 +5,12 @@ import Badges from '../components/Badges.astro';
 import GithubIcon from '../assets/icons/Github.astro';
 import LinkdinIcon from '../assets/icons/Linkdin.astro';
 import GmailIcon from '../assets/icons/gmail.astro';
-import WhatsappIcon from '../assets/icons/Whatsapp.astro';
 import SocialPill from '../components/Socialpill.astro';
 import Timeline from '../components/Timeline.astro';
 import Estudiosicon from '../assets/icons/estudiosicon.astro';
-import mejpeg from '../assets/me.jpeg'
 import Subtitle from '../components/subtitle.astro';
+import Bento from '../components/Bento.astro';
+import Schoolico from '../assets/icons/Schoolico.astro';
 ---
 
 <Layout
@@ -23,7 +23,7 @@ import Subtitle from '../components/subtitle.astro';
             <div class="sm:hidden border-2 p-1 rounded-full border-sky-500">
 			<img
 				class=" sm:hidden rounded-full size-30 object-cover"
-				alt="me" src={mejpeg.src} 
+				alt="me" src="/Imagenes/me.jpeg"
 				>
             </div>
             
@@ -66,7 +66,7 @@ import Subtitle from '../components/subtitle.astro';
         <Sectioncontainer id="about">
         <Sectioncontainer id="educacion">
             <Subtitle>
-                <Estudiosicon class="size-5 sm:size-6 items-center" />
+                <Schoolico class="size-5 sm:size-6 items-center" />
                 Educación
             </Subtitle>
             <Timeline />
@@ -77,6 +77,7 @@ import Subtitle from '../components/subtitle.astro';
                 <Estudiosicon class="size-5 sm:size-6 items-center"/>
                 Habilidades
             </Subtitle>
+            <Bento />
         </Sectioncontainer>
     </main>
 </Layout>
