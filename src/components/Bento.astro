@@ -3,6 +3,8 @@ import Badges from "./Badges.astro"
 import ExcelIcon from "../assets/icons/Excel.astro"
 import GmailIcon from "../assets/icons/gmail.astro"
 import GithubIcon from "../assets/icons/Github.astro"
+import proyecto1 from '../assets/Imagenes/proyectoweb1.webp';
+import pythonIcon from "../assets/python.svg";
 ---
 
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4
@@ -26,7 +28,7 @@ import GithubIcon from "../assets/icons/Github.astro"
     </p>
     <div class="flex flex-row gap-x-1 mt-6">
       <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-100">
-      <img class="size-3" src="/Imagenes/python.svg" alt="ico">
+      <img class="size-3" src={pythonIcon.src} alt="ico">
         Python</Badges>
       <Badges class="border-blue-900 bg-blue-100">Postgress</Badges>
     </div>
@@ -36,7 +38,7 @@ import GithubIcon from "../assets/icons/Github.astro"
   <!-- Imagen responsiva -->
   <div class="w-full h-40 sm:h-52 lg:h-full overflow-hidden rounded-md">
     <img
-      src="/Imagenes/proyectoweb1.webp"
+      src={proyecto1.src}
       alt="imagen"
       class="w-full h-full object-cover"
     />
@@ -52,7 +54,7 @@ import GithubIcon from "../assets/icons/Github.astro"
     <p class="text-sm text-gray-600 group-hover:lg:text-zinc-900 z-30">Análisis, datos y resultados en Python.</p>
     <div class="opacity-0 bg-radial from-yellow-300 from-10% to-55% to-white size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
       <img
-      src="/Imagenes/python.svg"
+      src={pythonIcon.src}
       alt="Python Icon"
       class="opacity-90 bg-zinc-900 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-200 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-120 group-hover:opacity-100"
     />

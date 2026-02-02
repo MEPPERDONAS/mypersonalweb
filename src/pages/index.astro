@@ -11,6 +11,8 @@ import Estudiosicon from '../assets/icons/estudiosicon.astro';
 import Subtitle from '../components/subtitle.astro';
 import Bento from '../components/Bento.astro';
 import Schoolico from '../assets/icons/Schoolico.astro';
+import Gmail from '../assets/icons/gmail.astro';
+import miFoto from '../assets/Imagenes/me.jpeg';
 ---
 
 <Layout
@@ -23,7 +25,7 @@ import Schoolico from '../assets/icons/Schoolico.astro';
             <div class="sm:hidden border-2 p-1 rounded-full border-sky-500">
 			<img
 				class=" sm:hidden rounded-full size-30 object-cover"
-				alt="me" src="/Imagenes/me.jpeg"
+				alt="me" src={miFoto.src}
 				>
             </div>
             
@@ -58,7 +60,7 @@ import Schoolico from '../assets/icons/Schoolico.astro';
                         linkedin
                     </SocialPill>
                     <SocialPill href="mailto:fasolano@unicauca.edu.co">
-                        <GmailIcon class="size-5 sm:size-6"/>
+                        <Gmail class="size-5 sm:size-6"/>
                         fabiansd1706@gmail.com
                     </SocialPill>	
             </nav>
