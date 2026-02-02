@@ -5,6 +5,7 @@ import GmailIcon from "../assets/icons/gmail.astro"
 import GithubIcon from "../assets/icons/Github.astro"
 import proyecto1 from '../assets/Imagenes/proyectoweb1.webp';
 import pythonIcon from "../assets/python.svg";
+import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
 ---
 
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4
@@ -52,7 +53,12 @@ import pythonIcon from "../assets/python.svg";
   <div class="bg-white p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden">
     <h4 class="font-semibold mb-1 z-30">Investigación</h4>
     <p class="text-sm text-gray-600 group-hover:lg:text-zinc-900 z-30">Análisis, datos y resultados en Python.</p>
-    <div class="opacity-0 bg-radial from-yellow-300 from-10% to-55% to-white size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
+
+    <div class="z-40 border border-gray-700 bg-white rounded-sm transition-all duration-100 ease-in-out relative top-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 px-1">
+      <p class="font-mono text-xs hidden group-hover:block animate-typing duration-300 transition-transform">import pandas</p>
+    </div>
+
+    <div class="z-0 opacity-0 bg-radial from-yellow-300 from-10% to-55% to-white size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
       <img
       src={pythonIcon.src}
       alt="Python Icon"
@@ -68,7 +74,7 @@ import pythonIcon from "../assets/python.svg";
     <div class="flex flex-row my-3">
        <ExcelIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none transition duration-300"/>
        <GithubIcon class="size-5 sm:size-5 border bg-white border-white rounded-full -translate-x-2 group-hover:translate-x-1 group-hover:rounded-none transition duration-300"/>
-       <GmailIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none -translate-x-4 group-hover:translate-x-2 transition duration-400"/>
+       <PowerbiIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none -translate-x-4 group-hover:translate-x-2 transition duration-400"/>
        
     </div>
   </div>
@@ -76,7 +82,7 @@ import pythonIcon from "../assets/python.svg";
   <!-- Card horizontal -->
   <div class="sm:col-span-2 bg-linear-to-br from-zinc-500 via-zinc-800 to-zinc-900 p-5 text-white flex items-center justify-between hover:scale-102 transform duration-300 ease-in-out cursor-pointer rounded-md hover:contrast-120 border border-black">
     <div>
-      <h4 class="font-semibold">Tecnologías</h4>
+      <h4 class="font-semibold">Tecnologías y Lenguajes</h4>
       <p class="text-sm opacity-80">Astro, Tailwind, Python, Html, Css .</p>
     </div>
     <span class="text-xs opacity-60">Ver mas</span>
