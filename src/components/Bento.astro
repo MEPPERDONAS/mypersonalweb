@@ -1,16 +1,20 @@
 ---
-
+import Badges from "./Badges.astro"
+import ExcelIcon from "../assets/icons/Excel.astro"
+import GmailIcon from "../assets/icons/gmail.astro"
+import GithubIcon from "../assets/icons/Github.astro"
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-4
   auto-rows-auto lg:auto-rows-[180px]">
 
   <!-- Card destacada -->
 <div
   class="lg:col-span-2 lg:row-span-2 p-4 sm:p-6
          text-zinc-950 flex flex-col gap-4
-         border border-zinc-800 hover:bg-violet-50 transition h-2xl
-         hover:scale-102 transform duration-300 ease-in-out rounded-md"
+         border border-zinc-800 transition h-2xl
+         hover:scale-102 transform duration-300 ease-in-out rounded-md
+         timeline-view animate-slide-in-left animate-range-[entry_0%_cover_30%]"
 >
 
   <div>
@@ -20,6 +24,13 @@
     <p class="text-sm opacity-90">
       Proyecto de app flask de reservas con persistencia elaborada en python  y con base postgress.
     </p>
+    <div class="flex flex-row gap-x-1 mt-6">
+      <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-100">
+      <img class="size-3" src="/Imagenes/python.svg" alt="ico">
+        Python</Badges>
+      <Badges class="border-blue-900 bg-blue-100">Postgress</Badges>
+    </div>
+    
   </div>
 
   <!-- Imagen responsiva -->
@@ -31,37 +42,42 @@
     />
   </div>
 
-  <a href="https://one85-reservas.onrender.com/" target="_blank" class="text-xs opacity-75 hover:font-bold">Ver más →</a>
+  <a href="https://one85-reservas.onrender.com/" target="_blank" rel="noopener noreferrer" class="text-xs opacity-75 hover:font-bold max-w-fit ps-0.5 px-1">Ver más →</a>
 </div>
 
 
   <!-- Card normal -->
   <div class="bg-white p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden">
-    <h4 class="font-semibold mb-1">Investigación</h4>
-    <p class="text-sm text-gray-600">Análisis, datos y resultados.</p>
-    <img
+    <h4 class="font-semibold mb-1 z-30">Investigación</h4>
+    <p class="text-sm text-gray-600 group-hover:lg:text-zinc-900 z-30">Análisis, datos y resultados en Python.</p>
+    <div class="opacity-0 bg-radial from-yellow-300 from-10% to-55% to-white size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
+      <img
       src="/Imagenes/python.svg"
-      alt="Pythind"
-      class="opacity-70 bg-zinc-900 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-200 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-120 group-hover:opacity-100"
+      alt="Python Icon"
+      class="opacity-90 bg-zinc-900 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-200 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-120 group-hover:opacity-100"
     />
 
   </div>
 
   <!-- Card normal -->
-  <div class="bg-white p-5 shadow-sm hover:shadow-md transition border border-zinc-800
-              hover:scale-102 transform duration-300 ease-in-out rounded-md">
+  <div class="bg-white p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden sm:col-span-2 lg:col-span-1 group">
     <h4 class="font-semibold mb-1">Proyectos</h4>
     <p class="text-sm text-gray-600">Planeación y seguimiento.</p>
+    <div class="flex flex-row my-3">
+       <ExcelIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none transition duration-300"/>
+       <GithubIcon class="size-5 sm:size-5 border bg-white border-white rounded-full -translate-x-2 group-hover:translate-x-1 group-hover:rounded-none transition duration-300"/>
+       <GmailIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none -translate-x-4 group-hover:translate-x-2 transition duration-400"/>
+       
+    </div>
   </div>
 
   <!-- Card horizontal -->
-  <div class="sm:col-span-2 bg-zinc-800 p-5 text-white flex items-center justify-between
-              hover:scale-102 transform duration-300 ease-in-out cursor-pointer rounded-md">
+  <div class="sm:col-span-2 bg-linear-to-br from-zinc-500 via-zinc-800 to-zinc-900 p-5 text-white flex items-center justify-between hover:scale-102 transform duration-300 ease-in-out cursor-pointer rounded-md hover:contrast-120 border border-black">
     <div>
       <h4 class="font-semibold">Tecnologías</h4>
-      <p class="text-sm opacity-80">Astro, Tailwind, datos, Html, css .</p>
+      <p class="text-sm opacity-80">Astro, Tailwind, Python, Html, Css .</p>
     </div>
-    <span class="text-xs opacity-60">Explorar</span>
+    <span class="text-xs opacity-60">Ver mas</span>
   </div>
 
 

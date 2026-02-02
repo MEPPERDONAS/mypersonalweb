@@ -1,10 +1,11 @@
 @import "tailwindcss";
+@import "tailwind-animations";
 
 @layer utilities {
   @keyframes fade-up {
     from {
-      opacity: 0;
-      transform: translateY(24px);
+      opacity: 0.1;
+      transform: translateY(34px);
     }
     to {
       opacity: 1;
