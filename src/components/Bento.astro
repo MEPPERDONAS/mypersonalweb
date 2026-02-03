@@ -16,7 +16,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
          flex flex-col gap-4
          border border-zinc-800 transition h-2xl
          hover:scale-102 transform duration-300 ease-in-out rounded-md
-         timeline-view animate-slide-in-left animate-range-[entry_0%_cover_30%]"
+         timeline-view animate-bounce-fade-in animate-range-[entry_0%_cover_30%] dark:hover:shadow-fuchsia-600 hover:shadow-sm"
 >
 
   <div>
@@ -49,7 +49,10 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
 
 
   <!-- Card normal -->
-  <div class="p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden">
+  <div class="p-5 shadow-sm transition group border border-zinc-800 hover:scale-102 
+              transform duration-300 ease-in-out
+              rounded-md flex flex-col items-start relative overflow-hidden
+              timeline-view animate-bounce-fade-in animate-range-[entry_0%_cover_30%] dark:hover:shadow-sky-400 hover:shadow-sm">
     <h4 class="font-semibold mb-1 text-shadow-md z-30">Investigación</h4>
     <p class="text-sm z-30 dark:group-hover:mix-blend-difference">Análisis, datos y resultados en Python.</p>
 
@@ -57,7 +60,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
       <p class="font-mono dark:text-black text-xs hidden group-hover:block animate-typing duration-300 transition-transform">import pandas</p>
     </div>
 
-    <div class="z-0 opacity-0 mask-radial-to-70% bg-yellow-300 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100
+    <div class="z-0 opacity-0  bg-yellow-300 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100
     "></div>
       <img
       src={pythonIcon.src}
@@ -68,7 +71,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
   </div>
 
   <!-- Card normal -->
-  <div class="p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden sm:col-span-2 lg:col-span-1 group aside">
+  <div class="p-5 shadow-sm transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden sm:col-span-2 lg:col-span-1 group aside timeline-view animate-bounce-fade-in animate-range-[entry_0%_cover_30%] dark:hover:shadow-fuchsia-600 hover:shadow-sm">
     <h4 class="font-semibold mb-1 text-pretty">Proyectos</h4>
     <p class="text-sm z-30">Planeación y seguimiento ( exel avanzado y PowerBi).</p>
     <div class="flex flex-row my-3">
@@ -80,7 +83,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
   </div>
 
   <!-- Card horizontal -->
-  <div class="sm:col-span-2 bg-linear-to-br from-zinc-500 via-zinc-800 to-zinc-900 p-5 text-white flex items-center justify-between hover:scale-102 transform duration-300 ease-in-out cursor-pointer rounded-md hover:contrast-120 border border-black">
+  <div class="sm:col-span-2 bg-linear-to-br from-zinc-500 via-zinc-800 to-zinc-900 p-5 text-white flex items-center justify-between hover:scale-102 transform duration-300 ease-in-out cursor-pointer rounded-md hover:contrast-120 border border-black timeline-view animate-fade-in-up animate-range-[entry_70%_cover_30%] dark:hover:shadow-fuchsia-600/70 hover:shadow-sm">
     <div>
       <h4 class="font-semibold">Tecnologías y Lenguajes</h4>
       <p class="mt-3">Conocimientos en</p>
