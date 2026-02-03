@@ -2,7 +2,7 @@
 import miFoto from '../assets/Imagenes/me.jpeg';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur  shadow-sm transition-colors duration-300">
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70 shadow-sm transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="flex items-center justify-between py-3">
       <img 
@@ -10,14 +10,11 @@ import miFoto from '../assets/Imagenes/me.jpeg';
         src={miFoto.src}
         alt="me"
       />
-      <button id="themeToggle" class="p-2 rounded-full">
-        <span class="dark:hidden">☀️</span>
-        <span class="hidden dark:inline">🌙</span>
-      </button>
 
       <h2 class="sm:hidden font-semibold">
         Portafolio
       </h2>
+      <div class="flex flex-row-reverse gap-x-3">
       <button
         id="boton"
         aria-label="Abrir menú"
@@ -31,7 +28,7 @@ import miFoto from '../assets/Imagenes/me.jpeg';
         class="
           
           absolute top-full left-0 w-full
-          backdrop-blur
+          backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70
           sm:static sm:w-auto sm:flex
           flex flex-col sm:flex-row
           gap-4 sm:gap-8
@@ -47,7 +44,11 @@ import miFoto from '../assets/Imagenes/me.jpeg';
         <a href="#habilidades" class="hover:text-cyan-600 transition-colors">Habilidades</a>
         <a href="#contact" class="hover:text-cyan-600 transition-colors">Contacto</a>
       </nav>
-
+      <button id="themeToggle" class="p-0 rounded-full">
+          <span class="dark:hidden">☀️</span>
+          <span class="hidden dark:inline">🌙</span>
+      </button>
+      </div>
     </div>
   </div>
 </header>

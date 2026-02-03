@@ -27,10 +27,10 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
       Proyecto de app flask de reservas con persistencia elaborada en python  y con base postgress.
     </p>
     <div class="flex flex-row gap-x-1 mt-6">
-      <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-100">
+      <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-100 dark:text-black">
       <img class="size-3" src={pythonIcon.src} alt="ico">
         Python</Badges>
-      <Badges class="border-blue-900 bg-blue-100">Postgress</Badges>
+      <Badges class="border-blue-900 bg-blue-100 dark:text-black">Postgress</Badges>
     </div>
     
   </div>
@@ -51,10 +51,10 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
   <!-- Card normal -->
   <div class="p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden">
     <h4 class="font-semibold mb-1 z-30">Investigación</h4>
-    <p class="text-sm text-gray-600 group-hover:lg:text-zinc-900 z-30">Análisis, datos y resultados en Python.</p>
+    <p class="text-sm  group-hover:lg:text-zinc-900 z-30 opacity-90">Análisis, datos y resultados en Python.</p>
 
     <div class="z-40 border border-gray-700 bg-white rounded-sm transition-all duration-100 ease-in-out relative top-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 px-1">
-      <p class="font-mono text-xs hidden group-hover:block animate-typing duration-300 transition-transform">import pandas</p>
+      <p class="font-mono dark:text-black text-xs hidden group-hover:block animate-typing duration-300 transition-transform">import pandas</p>
     </div>
 
     <div class="z-0 opacity-0 bg-yellow-300 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
@@ -71,9 +71,9 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
     <h4 class="font-semibold mb-1">Proyectos</h4>
     <p class="text-sm text-gray-600">Planeación y seguimiento.</p>
     <div class="flex flex-row my-3">
-       <ExcelIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none transition duration-300"/>
-       <GithubIcon class="size-5 sm:size-5 border bg-white border-white rounded-full -translate-x-2 group-hover:translate-x-1 group-hover:rounded-none transition duration-300"/>
-       <PowerbiIcon class="size-5 sm:size-5 border bg-white border-white rounded-full group-hover:rounded-none -translate-x-4 group-hover:translate-x-2 transition duration-400"/>
+       <ExcelIcon class="size-5 sm:size-5 border bg-white dark:bg-transparent border-white rounded-full dark:border-0 group-hover:rounded-none transition duration-300"/>
+       <GithubIcon class="size-5 sm:size-5 border bg-white dark:bg-transparent border-white rounded-full dark:border-0 -translate-x-2 group-hover:translate-x-1 group-hover:rounded-none transition duration-300"/>
+       <PowerbiIcon class="size-5 sm:size-5 border bg-white dark:bg-transparent border-white rounded-full dark:border-0 group-hover:rounded-none -translate-x-4 group-hover:translate-x-2 transition duration-400"/>
        
     </div>
   </div>
