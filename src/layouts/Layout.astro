@@ -25,8 +25,7 @@ const { title, description } = Astro.props;
 	</head>
 
 	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-		</div>
+		
 		<Header />
 		<slot />
 		<Footer />
@@ -35,16 +34,23 @@ const { title, description } = Astro.props;
 
 <style>
 	:root{
-		color-scheme: light;
+		color-scheme: light dark;
 	}
 
 	html{
 		font-family: 'Onest Variable', sans-serif;
 		scroll-behavior: smooth;
-
+		background-color: rgb(255, 255, 255);
+    	color: var(--color-zinc-950);
 	}
+
+	html.dark {
+		background-color: var(--color-zinc-950);
+		color: var(--color-zinc-50);
+  	}
+
 	body {
-		background: #ffff;
+		
 		display: flex;
 		flex-direction: column;
 		align-items: center;

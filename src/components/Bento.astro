@@ -13,16 +13,16 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
   <!-- Card destacada -->
 <div
   class="lg:col-span-2 lg:row-span-2 p-4 sm:p-6
-         text-zinc-950 flex flex-col gap-4
+         flex flex-col gap-4
          border border-zinc-800 transition h-2xl
          hover:scale-102 transform duration-300 ease-in-out rounded-md
          timeline-view animate-slide-in-left animate-range-[entry_0%_cover_30%]"
 >
 
   <div>
-    <h3 class="text-xl sm:text-2xl font-bold mb-2">
+    <h4 class="font-bold mb-2">
       Proyecto destacado
-    </h3>
+    </h4>
     <p class="text-sm opacity-90">
       Proyecto de app flask de reservas con persistencia elaborada en python  y con base postgress.
     </p>
@@ -49,7 +49,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
 
 
   <!-- Card normal -->
-  <div class="bg-white p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden">
+  <div class="p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden">
     <h4 class="font-semibold mb-1 z-30">Investigación</h4>
     <p class="text-sm text-gray-600 group-hover:lg:text-zinc-900 z-30">Análisis, datos y resultados en Python.</p>
 
@@ -57,7 +57,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
       <p class="font-mono text-xs hidden group-hover:block animate-typing duration-300 transition-transform">import pandas</p>
     </div>
 
-    <div class="z-0 opacity-0 bg-radial from-yellow-300 from-10% to-55% to-white size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
+    <div class="z-0 opacity-0 bg-yellow-300 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-300 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-700 group-hover:opacity-100"></div>
       <img
       src={pythonIcon.src}
       alt="Python Icon"
@@ -67,7 +67,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
   </div>
 
   <!-- Card normal -->
-  <div class="bg-white p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden sm:col-span-2 lg:col-span-1 group">
+  <div class="p-5 shadow-sm hover:shadow-md transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden sm:col-span-2 lg:col-span-1 group">
     <h4 class="font-semibold mb-1">Proyectos</h4>
     <p class="text-sm text-gray-600">Planeación y seguimiento.</p>
     <div class="flex flex-row my-3">

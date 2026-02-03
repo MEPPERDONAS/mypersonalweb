@@ -4,7 +4,6 @@ import Layout from '../layouts/Layout.astro';
 import Badges from '../components/Badges.astro';
 import GithubIcon from '../assets/icons/Github.astro';
 import LinkdinIcon from '../assets/icons/Linkdin.astro';
-import GmailIcon from '../assets/icons/gmail.astro';
 import SocialPill from '../components/Socialpill.astro';
 import Timeline from '../components/Timeline.astro';
 import Estudiosicon from '../assets/icons/estudiosicon.astro';
@@ -20,34 +19,34 @@ import miFoto from '../assets/Imagenes/me.jpeg';
  description="Portafolio de Fabian Solano, Administrador de Empresas con énfasis en la planeación y gestión de proyectos.">
     
     <main class="px-4 sm:px-6 lg:px-8">
-        <Sectioncontainer class="py-20 sm:py-32 pb-10">
+        <Sectioncontainer class="pt-20 sm:py-32">
 			<div class="justify-items-center">
-            <div class="sm:hidden border-2 p-1 rounded-full border-sky-500">
-			<img
-				class=" sm:hidden rounded-full size-30 object-cover"
-				alt="me" src={miFoto.src}
-				>
-            </div>
+                <div class="sm:hidden border-2 p-1 rounded-full border-sky-500">
+                    <img
+                        class=" sm:hidden rounded-full size-30 object-cover"
+                        alt="me" src={miFoto.src}
+                    >
+                </div>
             
-				<h1 class="text-zinc-950 text-center text-2xl sm:text-5xl lg:text-5xl font-bold flex flex-col sm:flex-row gap-x-4 gap-y-2 py-10 opacity-0 translate-y-6 transition-all duration-900 ease-out" data-fade-up>
+				<h1 class="text-center text-2xl sm:text-5xl lg:text-5xl font-bold flex flex-col sm:flex-row gap-x-4 gap-y-2 py-10 opacity-0 translate-y-6 transition-all duration-900 ease-out" data-fade-up>
                 Hola soy Fabian! 
-                <a 
-                    href="https://www.linkedin.com/in/fabian-mauricio-solano-dorado-5225a03a9/" 
-                    target="_blank"
-                    rel="noopener"
-                    class="flex justify-center xl:justify-start items-center"
-                >
-                    <Badges class="border-sky-500">Disponible</Badges>
-                </a>
-            </h1>
+                    <a 
+                        href="https://www.linkedin.com/in/fabian-mauricio-solano-dorado-5225a03a9/" 
+                        target="_blank"
+                        rel="noopener"
+                        class="flex justify-center xl:justify-start items-center"
+                    >
+                        <Badges class="border-sky-500">Disponible</Badges>
+                    </a>
+                </h1>
 			</div>
 
-            <h2 class="text-base sm:text-lg lg:text-xl text-zinc-700 leading-relaxed max-w-4xl">
-                <span class="font-bold">Administrador de Empresas</span> con énfasis en la planeación y gestión de proyectos, con 
+            <h2 class="text-base sm:text-lg lg:text-xl leading-relaxed max-w-4xl">
+                <span class="font-normal">Administrador de Empresas</span> con énfasis en la planeación y gestión de proyectos, con 
                 capacidad para apoyar la formulación, seguimiento y control de actividades 
-                orientadas al cumplimiento de <span class="text-cyan-800 font-semibold">objetivos organizacionales.</span> Manejo herramientas 
+                orientadas al cumplimiento de <span class="text-orange-600 dark:text-fuchsia-900 font-semibold">objetivos organizacionales.</span> Manejo herramientas 
                 digitales y software de apoyo para la organización de información, elaboración de 
-                informes y optimización de procesos
+                informes y optimización de procesos.
             </h2>
 
             <nav class="flex flex-wrap flex-row gap-2 sm:gap-3 mt-6">
@@ -65,7 +64,6 @@ import miFoto from '../assets/Imagenes/me.jpeg';
                     </SocialPill>	
             </nav>
         </Sectioncontainer>
-        <Sectioncontainer id="about">
         <Sectioncontainer id="educacion">
             <Subtitle>
                 <Schoolico class="size-5 sm:size-6 items-center" />
@@ -81,5 +79,26 @@ import miFoto from '../assets/Imagenes/me.jpeg';
             </Subtitle>
             <Bento />
         </Sectioncontainer>
+
+        <Sectioncontainer id="contact">
+            <Subtitle>
+                <Estudiosicon class="size-5 sm:size-6 items-center"/>
+                Contacto
+            </Subtitle>
+            <div class="text-lg sm:text-xl text-zinc-700 leading-relaxed max-w-4xl">
+                <p class="mb-4">
+                    ¡Gracias por visitar mi portafolio! Si estás interesado en colaborar o tienes alguna pregunta, no dudes en contactarme.
+                </p>
+                <p>
+                    Puedes enviarme un correo electrónico a 
+                    <a href="mailto:fasolano@unicauca.edu.co" class="text-cyan-700 hover:underline">
+                        fasolano@unicauca.edu.co
+                    </a>
+                    o conectarte conmigo a través de mis redes sociales.
+                </p>
+            </div>
+            
+        </Sectioncontainer>
+
     </main>
 </Layout>

@@ -1,0 +1,26 @@
+---
+
+interface Props {
+  title: string;
+  description?: string;
+  class?: string;
+}
+
+const { title, description, class: className } = Astro.props;
+---
+
+<article class={`
+  ${className}
+  relative rounded-md border border-zinc-800 p-5 
+  transition-all duration-300 ease-in-out hover:scale-[1.02]
+  overflow-hidden group flex flex-col
+`}>
+  <div class="absolute inset-0 z-[-1] group-hover:bg-zinc-50 transition-colors"></div>
+
+  <div class="z-10 flex flex-col h-full">
+    <h3 class="text-xl font-bold mb-1">{title}</h3>
+    {description && <p class="text-sm text-gray-600 opacity-90">{description}</p>}
+    
+    <slot />
+  </div>
+</article>
