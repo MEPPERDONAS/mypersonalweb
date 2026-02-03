@@ -1,53 +1,58 @@
 ---
+import { Image } from 'astro:assets';
 import miFoto from '../assets/Imagenes/me.jpeg';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70 shadow-sm transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="flex items-center justify-between py-3">
-      <img 
+      <Image 
         class="rounded-full w-10 h-10 hidden sm:block object-cover"
-        src={miFoto.src}
+        src={miFoto}
         alt="me"
       />
 
       <h2 class="sm:hidden font-semibold">
         Portafolio
       </h2>
-      <div class="flex flex-row-reverse gap-x-3">
-      <button
-        id="boton"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        class="sm:hidden text-2xl transition-transform duration-300"
-      >
-        ☰
-      </button>
-      <nav
-        id="headermenu"
-        class="
-          
-          absolute top-full left-0 w-full
-          backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70
-          sm:static sm:w-auto sm:flex
-          flex flex-col sm:flex-row
-          gap-4 sm:gap-8
-          text-center
-          text-sm sm:text-base
-          py-4 sm:py-0
-          opacity-0 sm:opacity-100
-          -translate-y-2 sm:translate-y-0
-          transition-all duration-300 ease-out
-        "
-      >
-        <a href="#educacion" class="hover:text-cyan-600 transition-colors">Educación</a>
-        <a href="#habilidades" class="hover:text-cyan-600 transition-colors">Habilidades</a>
-        <a href="#contact" class="hover:text-cyan-600 transition-colors">Contacto</a>
-      </nav>
-      <button id="themeToggle" class="p-0 rounded-full">
-          <span class="dark:hidden">☀️</span>
-          <span class="hidden dark:inline">🌙</span>
-      </button>
+      <div class="flex flex-row-reverse gap-x-3 items-center">
+        <button
+          id="boton"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          class="sm:hidden text-2xl transition-transform duration-300"
+        >
+          ☰
+        </button>
+        <nav
+          id="headermenu"
+          class="
+            
+            absolute top-full left-0 w-full 
+            dark:bg-neutral-900/70 bg-neutral-100/70 sm:bg-transparent dark:sm:bg-transparent
+            sm:static sm:w-auto sm:flex
+            flex flex-col sm:flex-row
+            gap-4 sm:gap-8
+            text-center
+            text-sm sm:text-base
+            py-4 sm:py-0
+            opacity-0 sm:opacity-100
+            -translate-y-2 sm:translate-y-0
+            transition-all duration-300 ease-out
+          "
+        >
+          <a href="#educacion" class="hover:text-cyan-600 transition-colors">Educación</a>
+          <a href="#habilidades" class="hover:text-cyan-600 transition-colors">Habilidades</a>
+          <a href="#contact" class="hover:text-cyan-600 transition-colors">Contacto</a>
+        </nav>
+
+          <button id="themeToggle" class="relative size-5 flex flex-col justify-center overflow-hidden transition-colors items-center">
+            
+            <span class="absolute transition-all duration-500 ease-in-out transform dark:translate-y-10 dark:opacity-0 translate-y-0 opacity-100">  ☀️ </span>
+            
+            <span class="absolut transition-all duration-500 ease-in-out transform dark:translate-y-0 dark:opacity-100 -translate-y-10 opacity-0"> 🌙 </span>
+          </button>
+
       </div>
     </div>
   </div>

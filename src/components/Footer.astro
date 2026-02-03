@@ -1,6 +1,7 @@
 ---
 import Whatsapp from "../assets/icons/Whatsapp.astro";
 import InstaIcon from "../assets/icons/InstaIcon.astro";
+import Socialpill from "./Socialpill.astro";
 ---
 
 <footer class="relative mt-20 pt-5 border-t border-zinc-300 dark:border-zinc-800 bg-zinc-200 dark:bg-black w-full overflow-hidden justify-items-center">
@@ -13,18 +14,16 @@ import InstaIcon from "../assets/icons/InstaIcon.astro";
             </span>
         </p>
             <div class="flex justify-center gap-4 mb-6">
-            <a href="https://wa.me/573143608404?text=Hola,%20me%20gustaría%20más%20información." 
-                target="_blank" 
-                rel="noopener">
-                <Whatsapp class="size-5 opacity-90 hover:opacity-100 hover:scale-105 transition-opacity duration-300"/>
-            </a>
-
-            <a href="https://www.instagram.com/fabiian_17sd/"
-                target="_blank" 
-                rel="noopener">
-                <InstaIcon class="size-5 opacity-90 hover:opacity-100 hover:scale-105 transition-opacity duration-300"/>
-            </a>
+                <Socialpill class="text-sm border-0" href="https://wa.me/573143608404?text=Hola,%20me%20gustaría%20más%20información." aria-label="Whatsapp">
+                    <Whatsapp class="size-4"/>
+                    Whatsapp
+                </Socialpill>
+                <Socialpill class="text-sm border-0" href="https://www.instagram.com/fabiian_17sd/" aria-label="Instagram">
+                    <InstaIcon class="size-4"/>
+                    instagram
+                </Socialpill>
             </div>
+
         <p class="text-xs text-center mb-10 text-zinc-400">Hecho ccon Astro y amor.</p>
     </div>
 

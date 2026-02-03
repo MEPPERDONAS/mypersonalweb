@@ -1,4 +1,8 @@
-<a class="rounded-full border border-gray-800 flex items-center justify-center gap-x-2 px-4 py-1 hover:bg-sky-800/15 transition-all duration-200 ease-in-out hover:scale-105 hover:drop-shadow-2xl cursor-pointer" 
+---
+const {class:classname} = Astro.props;
+---
+
+<a class={`rounded-full border border-gray-800 flex items-center justify-center gap-x-2 px-4 py-1 hover:bg-sky-800/15 transition-all duration-200 ease-in-out hover:scale-105 hover:drop-shadow-2xl cursor-pointer ${classname}`} 
     {...Astro.props}
     target="_blank"
     rel="noopener noreferrer"

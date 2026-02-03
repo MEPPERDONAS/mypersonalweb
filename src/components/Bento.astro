@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Badges from "./Badges.astro"
 import ExcelIcon from "../assets/icons/Excel.astro"
 import GithubIcon from "../assets/icons/Github.astro"
@@ -27,24 +28,30 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
       Proyecto de app flask de reservas con persistencia elaborada en python  y con base postgress.
     </p>
     <div class="flex flex-row gap-x-1 mt-6">
-      <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-100 dark:text-black">
-      <img class="size-3" src={pythonIcon.src} alt="ico">
+      <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-400/20 ">
+      <img class="size-3" src={pythonIcon.src} loading="lazy" alt="ico">
         Python</Badges>
-      <Badges class="border-blue-900 bg-blue-100 dark:text-black">Postgress</Badges>
+      <Badges class="border-blue-900 bg-blue-900/30">Postgress</Badges>
     </div>
     
   </div>
 
   <!-- Imagen responsiva -->
   <div class="w-full h-40 sm:h-52 lg:h-full overflow-hidden rounded-md">
-    <img
-      src={proyecto1.src}
+    <Image
+      src={proyecto1}
       alt="imagen"
+      loading="lazy"
       class="w-full h-full object-cover"
     />
   </div>
+  <div class="flex flex-row justify-between items-center transition duration-300">
+    <a href="https://github.com/MEPPERDONAS/185_reservas" target="_blank" rel="noopener noreferrer" class="text-xs opacity-75 hover:font-bold max-w-fit ps-0.5 px-1 flex flex-row gap-2 items-center group transition duration-300">
+      <GithubIcon class="size-4 group-hover:scale-105 transition duration-300"/>Github
+    </a>
+    <a href="https://one85-reservas.onrender.com/" target="_blank" rel="noopener noreferrer" class="text-xs opacity-75 hover:font-bold max-w-fit ps-0.5 px-1">Ver demo →</a>
+  </div>
 
-  <a href="https://one85-reservas.onrender.com/" target="_blank" rel="noopener noreferrer" class="text-xs opacity-75 hover:font-bold max-w-fit ps-0.5 px-1">Ver más →</a>
 </div>
 
 
@@ -65,6 +72,7 @@ import PowerbiIcon from "../assets/icons/PowerBiIcon.astro";
       <img
       src={pythonIcon.src}
       alt="Python Icon"
+      loading="lazy"
       class="opacity-90 bg-zinc-900 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-200 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-120 group-hover:opacity-100"
     />
 
