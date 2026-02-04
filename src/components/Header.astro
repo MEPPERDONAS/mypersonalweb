@@ -9,6 +9,7 @@ import miFoto from '../assets/Imagenes/me.webp';
       <Image 
         class="rounded-full w-10 h-10 hidden sm:block object-cover"
         width={800} height={800}
+        loading={'eager'}
         src={miFoto}
         alt="me"
       />
@@ -42,9 +43,9 @@ import miFoto from '../assets/Imagenes/me.webp';
             transition-all duration-300 ease-out
           "
         >
-          <a href="#educacion" class="hover:text-cyan-600 transition-colors">Educación</a>
-          <a href="#habilidades" class="hover:text-cyan-600 transition-colors">Habilidades</a>
-          <a href="#contact" class="hover:text-cyan-600 transition-colors">Contacto</a>
+          <a href="#educacion" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Educación</a>
+          <a href="#habilidades" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Habilidades</a>
+          <a href="#contact" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Contacto</a>
         </nav>
 
           <button id="themeToggle" class="relative size-5 flex flex-col justify-center overflow-hidden transition-colors items-center">

@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  images: {
+    src: ImageMetadata;
+    alt: string;
+  }[];
+  autoPlay?: boolean;
+  autoPlayInterval?: number;
+  class?: string;
+}
+
+const { images, autoPlay = false, autoPlayInterval = 3000, class: className = '' } = Astro.props;
+---
+
+<div class={`relative w-full overflow-hidden rounded-md group ${className}`}>
+  <!-- Contenedor de imágenes -->
+  <div class="carousel-track flex transition-transform duration-500 ease-in-out h-full">
+    {images.map((image) => (
+      <Image
+        src={image.src}
+        width={800}
+        height={800}
+        alt={image.alt}
+        loading="lazy"
+        class="w-full h-full object-cover shrink-0"
+      />
+    ))}
+  </div>
+
+  <!-- Botones de navegación -->
+  <button 
+    class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2  text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+    aria-label="Anterior"
+  >
+    ❮
+  </button>
+  <button 
+    class="carousel-next absolute right-0 top-1/2 -translate-y-1/2  text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+    aria-label="Siguiente"
+  >
+    ❯
+  </button>
+
+  <!-- Indicadores -->
+  <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+    {images.map((_, index) => (
+      <button 
+        class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white transition-colors" 
+        data-index={index}
+        aria-label={`Ir a imagen ${index + 1}`}
+      />
+    ))}
+  </div>
+</div>
+
+<script define:vars={{ autoPlay, autoPlayInterval, totalSlides: images.length }}>
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const dots = document.querySelectorAll('.carousel-dot');
+  
+  let currentIndex = 0;
+  let autoPlayTimer;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('bg-white', index === currentIndex);
+      dot.classList.toggle('bg-white/50', index !== currentIndex);
+    });
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prev() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener('click', () => {
+    next();
+    if (autoPlay) {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prev();
+    if (autoPlay) {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+      if (autoPlay) {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+      }
+    });
+  });
+
+  function startAutoPlay() {
+    if (autoPlay) {
+      autoPlayTimer = setInterval(next, autoPlayInterval);
+    }
+  }
+
+  startAutoPlay();
+</script>
