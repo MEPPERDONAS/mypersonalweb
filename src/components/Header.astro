@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import miFoto from '../assets/Imagenes/me.jpeg';
+import miFoto from '../assets/Imagenes/me.webp';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70 shadow-sm transition-colors duration-300">
@@ -8,6 +8,7 @@ import miFoto from '../assets/Imagenes/me.jpeg';
     <div class="flex items-center justify-between py-3">
       <Image 
         class="rounded-full w-10 h-10 hidden sm:block object-cover"
+        width={800} height={800}
         src={miFoto}
         alt="me"
       />

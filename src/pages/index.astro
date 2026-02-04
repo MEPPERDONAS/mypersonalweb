@@ -11,7 +11,7 @@ import Subtitle from '../components/subtitle.astro';
 import Bento from '../components/Bento.astro';
 import Schoolico from '../assets/icons/Schoolico.astro';
 import Gmail from '../assets/icons/gmail.astro';
-import miFoto from '../assets/Imagenes/me.jpeg';
+import miFoto from '../assets/Imagenes/me.webp';
 import { Image } from 'astro:assets';
 import { lazy } from 'astro:schema';
 ---
@@ -26,6 +26,7 @@ import { lazy } from 'astro:schema';
                 <div class="sm:hidden border-2 p-1 rounded-full border-sky-500">
                     <Image
                         class=" sm:hidden rounded-full size-30 object-cover"
+                        width={800} height={800}
                         alt="me" src={miFoto}
                         loading=eager
                     >
