@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import BentoItem from './BentoItem.astro';
 import Badges from "./Badges.astro"
 import ExcelIcon from "../assets/icons/Excel.astro"
 import GithubIcon from "../assets/icons/Github.astro"
@@ -18,56 +19,44 @@ const images = [
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4
   auto-rows-auto lg:auto-rows-[180px]">
 
-  <!-- Card destacada -->
-<div
-  class="lg:col-span-2 lg:row-span-2 p-4 sm:p-6
-         flex flex-col gap-4
-         border border-zinc-800 transition h-2xl
-         hover:scale-102 transform duration-300 ease-in-out rounded-md
-         timeline-view animate-bounce-fade-in animate-range-[entry_0%_cover_30%] hover:shadow-blue-600 hover:shadow-sm dark:hover:border-zinc-50"
->
-
-  <div>
-    <h4 class="font-bold mb-2 text-2xl">
-      Desarrollo Web
-    </h4>
-    <p class="text-sm opacity-80">
-      App flask de reservas con persistencia elaborada en python  y con base postgress.
-    </p>
-    <div class="flex flex-row gap-x-1 mt-6">
-      <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-400/20 ">
-      <img class="size-3" src={pythonIcon.src} loading="lazy" alt="ico">
-        Python</Badges>
-      <Badges class="border-blue-900 bg-blue-900/30">Postgress</Badges>
+  <BentoItem class="lg:col-span-2 lg:row-span-2 p-4 sm:p-6 gap-4">
+      <div>
+      <h3 class="font-bold mb-2 text-2xl">
+        Desarrollo Web
+      </h3>
+      <p class="text-sm opacity-80">
+        App flask de reservas con persistencia elaborada en python  y con base postgress.
+      </p>
+      <div class="flex flex-row gap-x-1 mt-6">
+        <Badges class="flex flex-row items-center gap-x-1 w-fit border-yellow-400 bg-yellow-400/20 ">
+        <img class="size-3" src={pythonIcon.src} loading="lazy" alt="ico">
+          Python</Badges>
+        <Badges class="border-blue-900 bg-blue-900/30">Postgress</Badges>
+      </div>
+      
     </div>
-    
-  </div>
 
-  <!-- Imagen responsiva -->
-  <Carousel 
-    images={images} 
-    autoPlay={true} 
-    autoPlayInterval={4000}
-    class="h-40 sm:h-52 lg:h-full" 
-  />
+    <!-- Imagen responsiva -->
+    <Carousel 
+      images={images} 
+      autoPlay={true} 
+      autoPlayInterval={4000}
+      class="h-40 sm:h-52 lg:h-full" 
+    />
 
-  <div class="flex flex-row justify-between items-center transition duration-300">
-    <a href="https://github.com/MEPPERDONAS/185_reservas" target="_blank" rel="noopener noreferrer" class="text-xs opacity-80 hover:scale-105 max-w-fit ps-0.5 px-1 flex flex-row gap-2 items-center group transition duration-300 hover:opacity-100">
-      <GithubIcon class="size-4 text-zinc-900 dark:text-zinc-50 group-hover:scale-105  transition duration-300"/>GitHub
-    </a>
-    <a href="https://one85-reservas.onrender.com/" target="_blank" rel="noopener noreferrer" class="text-xs opacity-75 hover:scale-105 max-w-fit ps-0.5 px-1 dark:hover:-translate-x-1 transition duration-300 
-    hover:text-blue-600 hover:opacity-100">Ver demo <span class=""> → </span></a>
-  </div>
+    <div class="flex flex-row justify-between items-center transition duration-300">
+      <a href="https://github.com/MEPPERDONAS/185_reservas" target="_blank" rel="noopener noreferrer" class="text-xs opacity-80 hover:scale-105 max-w-fit ps-0.5 px-1 flex flex-row gap-2 items-center group transition duration-300 hover:opacity-100">
+        <GithubIcon class="size-4 text-zinc-900 dark:text-zinc-50 group-hover:scale-105  transition duration-300"/>GitHub
+      </a>
+      <a href="https://one85-reservas.onrender.com/" target="_blank" rel="noopener noreferrer" class="text-xs opacity-75 hover:scale-105 max-w-fit ps-0.5 px-1 dark:hover:-translate-x-1 transition duration-300 hover:text-blue-600 hover:opacity-100">Ver demo <span class=""> → </span></a>
+    </div>
 
-</div>
+  </BentoItem>
 
 
   <!-- Card normal -->
-  <div class="p-5 shadow-sm transition group border border-zinc-800 hover:scale-102 
-              transform duration-300 ease-in-out
-              rounded-md flex flex-col items-start relative overflow-hidden
-              timeline-view animate-bounce-fade-in animate-range-[entry_0%_cover_30%] hover:shadow-blue-600 hover:shadow-sm dark:hover:border-zinc-50">
-    <h4 class="font-semibold mb-1 text-shadow-md z-30">Investigación</h4>
+  <BentoItem class="group items-start relative gap-0">
+    <h3 class="font-semibold mb-1 text-shadow-md z-30">Investigación</h3>
     <p class="text-sm z-30 dark:group-hover:mix-blend-difference opacity-80">Análisis, datos y resultados en Python.</p>
 
     <div class="z-40 border border-gray-700 bg-white rounded-sm transition-all duration-100 ease-in-out relative top-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 px-1">
@@ -82,11 +71,11 @@ const images = [
       class="opacity-90 bg-zinc-900 size-18 mt-2 p-3 rounded-full group-hover:rotate-12 transition-all duration-200 ease-in-out absolute -bottom-4 -right-4 group-hover:scale-120 group-hover:opacity-100"
     />
 
-  </div>
+  </BentoItem>
 
   <!-- Card normal -->
-  <div class="p-5 shadow-sm transition group border border-zinc-800 hover:scale-102 transform duration-300 ease-in-out rounded-md flex flex-col items-start relative overflow-hidden sm:col-span-2 lg:col-span-1 group aside timeline-view animate-bounce-fade-in animate-range-[entry_0%_cover_30%] hover:shadow-blue-600 hover:shadow-sm dark:hover:border-zinc-50">
-    <h4 class="font-semibold mb-1 text-pretty">Proyectos</h4>
+  <BentoItem class="sm:col-span-2 lg:col-span-1 group aside">
+    <h3 class="font-semibold mb-1 text-pretty">Proyectos</h3>
     <p class="text-sm z-30 opacity-80">Planeación y seguimiento ( exel avanzado y PowerBi).</p>
     <div class="flex flex-row my-3">
        <ExcelIcon class="size-5 sm:size-5 border bg-white dark:bg-transparent border-white rounded-full dark:border-0 group-hover:rounded-none transition duration-300"/>
@@ -94,17 +83,17 @@ const images = [
        <PowerbiIcon class="size-5 sm:size-5 border bg-white dark:bg-transparent border-white rounded-full dark:border-0 group-hover:rounded-none -translate-x-4 group-hover:translate-x-2 transition duration-400"/>
        
     </div>
-  </div>
+  </BentoItem>
 
   <!-- Card horizontal -->
-  <div class="sm:col-span-2 bg-linear-to-br from-zinc-500 via-zinc-800 to-zinc-900 p-5 text-white flex items-center justify-between hover:scale-102 transform duration-300 ease-in-out cursor-pointer rounded-md hover:contrast-120 border border-black timeline-view animate-fade-in-up animate-range-[entry_70%_cover_30%] hover:shadow-blue-600 hover:shadow-sm dark:hover:border-zinc-50">
+  <BentoItem class="sm:col-span-2 bg-linear-to-br from-zinc-500 via-zinc-800 to-zinc-900 p-5 hover:contrast-150 text-white flex flex-row items-center justify-between">
     <div>
-      <h4 class="font-semibold">Tecnologías y Lenguajes</h4>
+      <h3 class="font-semibold">Tecnologías y Lenguajes</h3>
       <p class="mt-3 text-sm opacity-80">Conocimientos en</p>
       <p class="text-sm opacity-80">Astro, Tailwind, Python, SQL, Html, Css.</p>
     </div>
     <span class=" text-xs opacity-70">Ver mas</span>
-  </div>
+  </BentoItem>
 
 
 </div>

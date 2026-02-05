@@ -46,7 +46,7 @@ const { images, autoPlay = false, autoPlayInterval = 3000, class: className = ''
   <!-- Indicadores -->
   <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
     {images.map((_, index) => (
-      <a 
+      <div 
         class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/50" 
         data-index={index}
         aria-label={`Ir a imagen ${index + 1}`}
