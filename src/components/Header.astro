@@ -19,10 +19,10 @@ import miFoto from '../assets/Imagenes/me.webp';
       </h2>
       <div class="flex flex-row-reverse gap-x-3 items-center">
         <button
-          id="boton"
+          id="Header-boton"
           aria-label="Abrir menú"
           aria-expanded="false"
-          class="sm:hidden text-2xl transition-transform duration-300"
+          class="sm:hidden text-2xl transition-transform duration-300 text-amber-300"
         >
           ☰
         </button>
@@ -48,11 +48,11 @@ import miFoto from '../assets/Imagenes/me.webp';
           <a href="#contact" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Contacto</a>
         </nav>
 
-          <button id="themeToggle" class="relative size-5 flex flex-col justify-center overflow-hidden transition-colors items-center">
-            
-            <span class="absolute transition-all duration-500 ease-in-out transform dark:translate-y-10 dark:opacity-0 translate-y-0 opacity-100">  ☀️ </span>
-            
-            <span class="absolut transition-all duration-500 ease-in-out transform dark:translate-y-0 dark:opacity-100 -translate-y-10 opacity-0"> 🌙 </span>
+          <button id="themeToggle" class="relative h-5 w-10 flex flex-col justify-center overflow-hidden transition-all items-center hover:scale-105 border rounded-full p-1 inset-shadow-sm inset-shadow-sky-100 dark:inset-shadow-transparent bg-sky-300 dark:bg-zinc-950">
+          
+            <span class="absolut transition-all duration-500 ease-in-out transform dark:translate-x-2 dark:opacity-100 translate-x-0 opacity-0 text-xs"> 🌙 </span>
+            <span class="absolute transition-all duration-500 ease-in-out transform dark:translate-x-0 dark:opacity-0 -translate-x-2 opacity-100 text-xs">  ☀️ </span>          
+
           </button>
 
       </div>
@@ -61,7 +61,7 @@ import miFoto from '../assets/Imagenes/me.webp';
 </header>
 
 <script>
-  const btn = document.getElementById('boton');
+  const btn = document.getElementById('Header-boton');
   const menu = document.getElementById('headermenu');
 
   if (btn && menu) {
