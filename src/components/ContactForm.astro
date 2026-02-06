@@ -1,0 +1,63 @@
+
+<h3 class="font-bold">Mensaje directo</h3>
+
+<form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto" method="POST">
+<div class="col-span-1">
+    <input class="border dark:border-amber-50 rounded-md p-2 w-full focus:border-2 focus:border-blue-600 outline-none hover:shadow-md shadow-blue-600 transition duration-300"
+        name="name" 
+        type="text" 
+        placeholder="Name" required />
+</div>
+
+<div class="col-span-1">
+    <input class="border dark:border-amber-50 rounded-md p-2 w-full focus:border-2 focus:border-blue-600 outline-none hover:shadow-md shadow-blue-600 transition duration-300" 
+        name="email" 
+        type="email" 
+        placeholder="Email" required />
+</div>
+
+<div class="md:col-span-2">
+    <textarea class="border dark:border-amber-50 rounded-md p-2 w-full min-h-30 focus:border-2 focus:border-blue-600 outline-none hover:shadow-md shadow-blue-600 transition duration-300" 
+        name="message" 
+        placeholder="Message"></textarea>
+</div>
+
+<div class="md:col-span-2 flex justify-center sm:justify-end">
+    <button class="border rounded-md px-3 hover:scale-102 transition-all duration-300 hover:border-blue-600 hover:shadow-sm shadow-blue-600" 
+        type="submit"> 
+        Send 
+    </button>
+</div>
+</form>
+
+<script>
+import { actions } from 'astro:actions';           
+const form = document.getElementById('contact-form') as HTMLFormElement;
+
+if (form) {
+    form.addEventListener('submit', async (event: Event) => {
+        event.preventDefault();                
+        const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const originalText = submitBtn.innerText;                    
+        try {
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+            const formData = new FormData(form);
+            const { data, error } = await actions.sendMail(formData);
+
+            if (data?.success) {
+                alert("¡Gracias! Mensaje enviado con éxito.");
+                form.reset();
+            } else {
+                console.error("Error de validación:", error);
+                alert("Hubo un error: " + (data?.message || "Revisa los datos."));
+            }
+        } catch (err) {
+            alert("Error de conexión. Inténtalo de nuevo.");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalText;
+        }
+    });
+}
+</script>

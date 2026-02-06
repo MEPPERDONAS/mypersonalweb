@@ -14,6 +14,7 @@ import Gmail from '../assets/icons/gmail.astro';
 import miFoto from '../assets/Imagenes/me.webp';
 import { Image } from 'astro:assets';
 import { lazy } from 'astro:schema';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout
@@ -101,78 +102,7 @@ import { lazy } from 'astro:schema';
                     o conectarte conmigo a través de mis redes sociales.
                 </p>
             </div>
-            
-        </Sectioncontainer>
-        <Sectioncontainer>  
-            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto" method="POST">
-            <div class="col-span-1">
-                <input class="border dark:border-amber-50 rounded-md p-2 w-full focus:border-2 focus:border-blue-500 outline-none"
-                    name="name" 
-                    type="text" 
-                    placeholder="Name" required />
-            </div>
-
-            <div class="col-span-1">
-                <input class="border dark:border-amber-50 rounded-md p-2 w-full focus:border-2 focus:border-blue-500 outline-none" 
-                    name="email" 
-                    type="email" 
-                    placeholder="Email" required />
-            </div>
-
-            <div class="md:col-span-2">
-                <textarea class="border dark:border-amber-50 rounded-md p-2 w-full min-h-30 focus:border-2 focus:border-blue-500 outline-none" 
-                    name="message" 
-                    placeholder="Message"></textarea>
-            </div>
-
-            <div class="md:col-span-2 flex justify-end">
-                <button class="border rounded-md px-3 hover:scale-102 transition-all duration-300 hover:border-blue-600 hover:shadow-sm shadow-blue-600" 
-                    type="submit"> 
-                    Send 
-                </button>
-            </div>
-        </form>
-
-        <script>
-            import { actions } from 'astro:actions';
-            // Importamos una librería de toasts si la tienes, o usamos alertas simples
-            
-            const form = document.getElementById('contact-form') as HTMLFormElement;
-
-            if (form) {
-                form.addEventListener('submit', async (event: Event) => {
-                    event.preventDefault();
-                    
-                    // 1. Capturar el botón para feedback visual
-                    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-                    const originalText = submitBtn.innerText;
-                    
-                    try {
-                        // 2. Estado de "Cargando"
-                        submitBtn.disabled = true;
-                        submitBtn.innerText = "Sending...";
-
-                        const formData = new FormData(form);
-                        const { data, error } = await actions.sendMail(formData);
-
-                        // 3. Manejo de Respuesta
-                        if (data?.success) {
-                            alert("¡Gracias! Mensaje enviado con éxito. ✅");
-                            form.reset();
-                        } else {
-                            console.error("Error de validación:", error);
-                            alert("Hubo un error: " + (data?.message || "Revisa los datos."));
-                        }
-                    } catch (err) {
-                        alert("Error de conexión. Inténtalo de nuevo.");
-                    } finally {
-                        // 4. Restaurar botón
-                        submitBtn.disabled = false;
-                        submitBtn.innerText = originalText;
-                    }
-                });
-            }
-        </script>
+            <ContactForm></ContactForm>    
         </Sectioncontainer>
 
     </main>
