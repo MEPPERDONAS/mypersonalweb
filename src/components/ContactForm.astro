@@ -3,29 +3,29 @@
 
 <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto" method="POST">
 <div class="col-span-1">
-    <input class="border border-zinc-500 dark:border-zinc-100 rounded-md p-2 w-full focus:border-2 focus:border-blue-600 outline-none hover:shadow-md shadow-blue-600 transition duration-300"
+    <input class="border border-zinc-500 dark:border-zinc-100 rounded-md p-2 w-full focus:border-2 outline-none hover:shadow-md shadow-blue-600 transition duration-300"
         name="name" 
         type="text" 
         placeholder="Nombre" required />
 </div>
 
 <div class="col-span-1">
-    <input class="border border-zinc-500 dark:border-zinc-100 rounded-md p-2 w-full focus:border-2 focus:border-blue-600 outline-none hover:shadow-md shadow-blue-600 transition duration-300" 
+    <input class="border border-zinc-500 dark:border-zinc-100 rounded-md p-2 w-full focus:border-2 outline-none hover:shadow-md shadow-blue-600 transition duration-300" 
         name="email" 
         type="email" 
         placeholder="Tu Email" required />
 </div>
 
 <div class="md:col-span-2">
-    <textarea class="border border-zinc-500 dark:border-zinc-100 rounded-md p-2 w-full min-h-30 focus:border-2 focus:border-blue-600 outline-none hover:shadow-md shadow-blue-600 transition duration-300" 
+    <textarea class="border border-zinc-500 dark:border-zinc-100 rounded-md p-2 w-full min-h-30 focus:border-2 outline-none hover:shadow-md shadow-blue-600 transition duration-300" 
         name="message" 
         placeholder="Tu mensaje"></textarea>
 </div>
 
 <div class="md:col-span-2 flex justify-center sm:justify-end">
-    <button class="border rounded-md px-3 hover:scale-102 transition-all duration-300 hover:border-blue-600 hover:shadow-sm shadow-blue-600" 
+    <button class="border rounded-md px-3 hover:scale-102 transition-all duration-300 inset-shadow-sm hover:inset-shadow-indigo-500" 
         type="submit"> 
-        Send 
+        Enviar 
     </button>
 </div>
 </form>
@@ -41,7 +41,7 @@ if (form) {
         const originalText = submitBtn.innerText;                    
         try {
             submitBtn.disabled = true;
-            submitBtn.innerText = "Sending...";
+            submitBtn.innerText = "Enviando...";
             const formData = new FormData(form);
             const { data, error } = await actions.sendMail(formData);
 
