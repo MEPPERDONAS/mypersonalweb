@@ -38,7 +38,7 @@ if (form) {
     form.addEventListener('submit', async (event: Event) => {
         event.preventDefault();                
         const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-        const originalText = submitBtn.innerText;                    
+        const originalText = submitBtn.innerText;                      
         try {
             submitBtn.disabled = true;
             submitBtn.innerText = "Enviando...";
@@ -46,7 +46,7 @@ if (form) {
             const { data, error } = await actions.sendMail(formData);
 
             if (data?.success) {
-                alert("¡Gracias! Mensaje enviado con éxito.");
+                alert("¡Gracias! Mensaje enviado con éxito.")
                 form.reset();
             } else {
                 console.error("Error de validación:", error);
