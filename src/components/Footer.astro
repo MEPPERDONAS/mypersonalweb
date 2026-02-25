@@ -4,26 +4,43 @@ import InstaIcon from "../assets/icons/InstaIcon.astro";
 import Socialpill from "./Socialpill.astro";
 ---
 
-<footer class="relative mt-20 pt-20 border-t border-zinc-300 dark:border-zinc-800 bg-zinc-200 dark:bg-black w-full overflow-hidden justify-items-center">
+<footer
+    class="relative mt-20 pt-20 border-t border-zinc-300 dark:border-zinc-800 bg-zinc-200 dark:bg-black w-full overflow-hidden justify-items-center"
+>
+    <div
+        class="md:max-w-xs text-left md:text-right flex flex-col justify-end gap-2"
+    >
+        <div class="flex justify-center gap-4 mb-6">
+            <Socialpill
+                class="text-sm border-0 hover:bg-transparent"
+                href="https://wa.me/573143608404?text=Hola,%20me%20gustaría%20más%20información."
+                aria-label="Whatsapp"
+            >
+                <Whatsapp class="size-4" />
+                Whatsapp
+            </Socialpill>
+            <Socialpill
+                class="text-sm border-0 hover:bg-transparent"
+                href="https://www.instagram.com/fabiian_17sd/"
+                aria-label="Instagram"
+            >
+                <InstaIcon class="size-4" />
+                instagram
+            </Socialpill>
+        </div>
+        <p
+            class="text-zinc-500 dark:text-zinc-400 text-sm text-center leading-relaxed"
+        >
+            Desarrollado por Fabian Solano
+        </p>
+        <p
+            class="text-zinc-500 dark:text-zinc-400 text-sm text-center leading-relaxed"
+        >
+            © {new Date().getFullYear()}
+        </p>
 
-    <div class="md:max-w-xs text-left md:text-right flex flex-col justify-end gap-2">
-
-            <div class="flex justify-center gap-4 mb-6">
-                <Socialpill class="text-sm border-0 hover:bg-transparent" href="https://wa.me/573143608404?text=Hola,%20me%20gustaría%20más%20información." aria-label="Whatsapp">
-                    <Whatsapp class="size-4"/>
-                    Whatsapp
-                </Socialpill>
-                <Socialpill class="text-sm border-0 hover:bg-transparent" href="https://www.instagram.com/fabiian_17sd/" aria-label="Instagram">
-                    <InstaIcon class="size-4"/>
-                    instagram
-                </Socialpill>
-            </div>
-        <p class="text-zinc-500 dark:text-zinc-400 text-sm text-center leading-relaxed">
-            Desarrollado por Fabian Solano</p>
-        <p class="text-zinc-500 dark:text-zinc-400 text-sm text-center leading-relaxed">
-            © {new Date().getFullYear()}</p>
-            
-        <p class="text-xs text-center mb-10 text-zinc-500">Hecho con Astro y amor.</p>
+        <p class="text-xs text-center mb-10 text-zinc-500">
+            Hecho con Astro y amor.
+        </p>
     </div>
-
 </footer>

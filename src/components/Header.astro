@@ -1,22 +1,23 @@
 ---
-import { Image } from 'astro:assets';
-import miFoto from '../assets/Imagenes/me.webp';
+import { Image } from "astro:assets";
+import miFoto from "../assets/Imagenes/me.webp";
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70 shadow-sm transition-colors duration-300">
+<header
+  class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-neutral-100/70 dark:bg-neutral-900/70 shadow-sm transition-colors duration-300"
+>
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="flex items-center justify-between py-3">
-      <Image 
+      <Image
         class="rounded-full w-10 h-10 hidden sm:block object-cover"
-        width={800} height={800}
-        loading={'eager'}
+        width={800}
+        height={800}
+        loading={"eager"}
         src={miFoto}
         alt="me"
       />
 
-      <h2 class="sm:hidden font-semibold">
-        Portafolio
-      </h2>
+      <h2 class="sm:hidden font-semibold">Portafolio</h2>
       <div class="flex flex-row-reverse gap-x-3 items-center">
         <button
           id="Header-boton"
@@ -28,9 +29,7 @@ import miFoto from '../assets/Imagenes/me.webp';
         </button>
         <nav
           id="headermenu"
-          class="
-            
-            absolute top-full left-0 w-full 
+          class="absolute top-full left-0 w-full
             dark:bg-neutral-900/70 bg-neutral-100/70 sm:bg-transparent dark:sm:bg-transparent
             sm:static sm:w-auto sm:flex
             flex flex-col sm:flex-row
@@ -40,60 +39,79 @@ import miFoto from '../assets/Imagenes/me.webp';
             py-4 sm:py-0
             opacity-0 sm:opacity-100
             -translate-y-2 sm:translate-y-0
-            transition-all duration-300 ease-out
-          "
+            transition-all duration-300 ease-out"
         >
-          <a href="#educacion" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Educación</a>
-          <a href="#habilidades" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Habilidades</a>
-          <a href="#contact" class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600">Contacto</a>
+          <a
+            href="#educacion"
+            class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600"
+            >Educación</a
+          >
+          <a
+            href="#habilidades"
+            class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600"
+            >Habilidades</a
+          >
+          <a
+            href="#contact"
+            class="hover:dark:text-blue-600 transition-colors hover:text-cyan-600"
+            >Contacto</a
+          >
         </nav>
 
-          <button id="themeToggle" class="relative h-5 w-10 flex flex-col justify-center overflow-hidden transition-all items-center hover:scale-105 border rounded-full p-1 inset-shadow-sm inset-shadow-sky-100 dark:inset-shadow-transparent bg-sky-300 dark:bg-zinc-950">
-          
-            <span class="absolut transition-all duration-500 ease-in-out transform dark:translate-x-2 dark:opacity-100 translate-x-0 opacity-0 text-xs"> 🌙 </span>
-            <span class="absolute transition-all duration-500 ease-in-out transform dark:translate-x-0 dark:opacity-0 -translate-x-2 opacity-100 text-xs">  ☀️ </span>          
-
-          </button>
-
+        <button
+          id="themeToggle"
+          class="relative h-5 w-10 flex flex-col justify-center overflow-hidden transition-all items-center border rounded-full p-1 inset-shadow-sm inset-shadow-sky-100 dark:inset-shadow-transparent bg-sky-300 dark:bg-zinc-950 group"
+        >
+          <span
+            class="absolut transition-all duration-500 ease-in-out transform dark:translate-x-2 dark:opacity-100 translate-x-0 opacity-0 text-xs group-hover:rotate-15"
+          >
+            🌙
+          </span>
+          <span
+            class="absolute transition-all duration-500 ease-in-out transform dark:translate-x-0 dark:opacity-0 -translate-x-2 opacity-100 text-xs"
+          >
+            ☀️
+          </span>
+        </button>
       </div>
     </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById('Header-boton');
-  const menu = document.getElementById('headermenu');
+  const btn = document.getElementById("Header-boton");
+  const menu = document.getElementById("headermenu");
 
   if (btn && menu) {
-    btn.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('open');
+    btn.addEventListener("click", () => {
+      const isOpen = menu.classList.contains("open");
 
       if (isOpen) {
-        menu.classList.add('opacity-0', '-translate-y-2');
-        menu.classList.remove('opacity-100', 'translate-y-0', 'open');
+        menu.classList.add("opacity-0", "-translate-y-2");
+        menu.classList.remove("opacity-100", "translate-y-0", "open");
 
-        setTimeout(() => menu.classList.add('hidden'), 300);
-        btn.textContent = '☰';
+        setTimeout(() => menu.classList.add("hidden"), 300);
+        btn.textContent = "☰";
       } else {
-        menu.classList.remove('hidden');
+        menu.classList.remove("hidden");
         requestAnimationFrame(() => {
-          menu.classList.remove('opacity-0', '-translate-y-2');
-          menu.classList.add('opacity-100', 'translate-y-0', 'open');
+          menu.classList.remove("opacity-0", "-translate-y-2");
+          menu.classList.add("opacity-100", "translate-y-0", "open");
         });
-        btn.textContent = '✕';
+        btn.textContent = "✕";
       }
 
-      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.setAttribute("aria-expanded", String(!isOpen));
     });
 
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('opacity-0', '-translate-y-2');
-        menu.classList.remove('opacity-100', 'translate-y-0', 'open');
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("opacity-0", "-translate-y-2");
+        menu.classList.remove("opacity-100", "translate-y-0", "open");
 
-        setTimeout(() => menu.classList.add('hidden'), 300);
-        btn.textContent = '☰';
-        btn.setAttribute('aria-expanded', 'false');
+        setTimeout(() => menu.classList.add("hidden"), 300);
+        btn.textContent = "☰";
+        btn.setAttribute("aria-expanded", "false");
       });
     });
   }
@@ -106,5 +124,7 @@ import miFoto from '../assets/Imagenes/me.webp';
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  document.getElementById("themeToggle")?.addEventListener("click", handleToggleClick);
+  document
+    .getElementById("themeToggle")
+    ?.addEventListener("click", handleToggleClick);
 </script>
